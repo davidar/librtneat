@@ -1,0 +1,304 @@
+rtNEAT source code distribution version 1.0, 2/24/06
+----------------------------------------------------
+
+The rtNEAT software is based on the real-time NeuroEvolution of 
+Augmenting Topologies method of evolving artificial neural networks, by 
+Stanley and Miikkulainen (2005). The rtNEAT method was originally 
+demonstrated in the NERO video game, in which simulated robots learn in 
+real time in response to player interaction.  To see rtNEAT demonstrated 
+inside NERO, please obtain NERO here:
+
+http://www.nerogame.org/
+  
+Source code included in this package was originally written by Kenneth 
+Stanley (kstanley@cs.ucf.edu) for the Torque Game Engine and later 
+translated into generic form by Ryan Cornelius 
+(lathentar@mail.utexas.edu).  The public rtNEAT release package was then 
+put together by Kenneth Stanley.
+
+Please note that this source code release does not include NERO source 
+code because NERO includes proprietary Torque game engine code.  (Torque 
+is produced by Garagegame, Inc.) However, the main evolution loop from 
+NERO is included in a file by itself that is not intended to be compiled 
+into the main package.  It is provided as a reference so that users can 
+build similar applications without needing to start from scratch. The 
+sample NERO code is in: nero_evolution.cpp
+
+Papers describing the rtNEAT method, NERO, and associated findings are 
+available at:
+
+http://nn.cs.utexas.edu/keyword?nero
+
+***************************************************************************** 
+This software is being released for non-commercial use because rtNEAT, a 
+property of the University of Texas at Austin,  is patent-pending at the 
+time of release.  If you wish to use rtNEAT for commercial purposes, you 
+will need to obtain a license from the University of Texas at Austin.  
+For more information, please send email to kstanley@cs.ucf.edu.  Please 
+read the Research License included in this package for complete 
+information on usage and redistribution.
+*****************************************************************************
+
+Much of the code in this package is derived from the original C++ version 
+of NEAT, which also came with extensive documentation on programming with 
+NEAT.  Therefore, for a detailed tutorial on programming with NEAT, 
+please obtain the original C++ distribution at:
+
+http://nn.cs.utexas.edu/keyword?neat-c
+
+This distrubution includes both NEAT and rtNEAT.  The core NEAT code has 
+itself been updated significantly.  Traits can now be made functional, 
+and adaptive networks can be evolved (though the default is 
+non-adaptive).  However, the main purpose of this distribution is to 
+release rtNEAT source code to the public.
+
+The remainder of this README described what is new in this rtNEAT release 
+package.
+
+-------------------------------------
+Included Files
+-------------------------------------
+
+This is a list of files included in the distribution, and also ones that 
+are created when it is run or made using the Makefile.
+
+Makefile        : Makes rtNEAT on linux
+README  	: This file
+experiments.cpp : Sample experiments code
+experiments.h
+gen_*           : A printout of a generation- produced by generational 
+                  NEAT
+gene.cpp	: Gene class definitions
+gene.h
+genome.cpp	: Genome class definitions	
+genome.h
+innovation.cpp	: Innovation class definitions
+innovation.h
+link.cpp	: Link class definitions
+link.h
+neat.cpp	: Main NEAT class
+neat.h
+neatmain.cpp	: Location of main, entry to the executable
+neatmain.h
+nero_evolution.cpp : Sample of the core evolution method in NERO
+network.cpp	: Network class defintions
+network.h
+nnode.cpp	: NNode class definitions
+nnode.h
+organism.cpp	: Organism class definitions
+organism.h
+p2mpar3bare.ne  : Sample parameter file
+p2nv.ne		: Parameter file for non-markov double pole balancing
+p2test.ne	: Sample parameter file 
+params256.ne    : Sample parameter file that was used in some major 
+                  experiments with pop size 256
+pole1startgenes	: Starter genes for signle pole balancing
+pole2_markov.ne	: Parameter file for markovian double pole balancing
+pole2startgenes : Start genes for double pole balancing
+pole2startgenes1 : Start genes for markovian double pole balancing
+pole2startgenes2 : Start genes for non-markovian double pole balancing
+population.cpp : Population class definitions
+population.h  
+rt_winpop  	: Population file output at the end of rtNEAT pole balancing 
+                  demo
+rtneat		: Main executable (must execute "make" to produce this 
+                                   file)
+species.cpp     : Species class definitions
+species.h
+statout		: Stat file output after some experiments
+test.ne		: Sample parameter file
+trait.cpp	: Trait class definitions
+trait.h
+UT_Research_License.pdf : The research license allowing use of
+                          this package for personal or research use.
+                          Please read this license.  It must be included
+                          in any distribution or derivative of this 
+                          package.
+xorstartgenes   : Start genes for XOR experiment
+
+-------------------------------------
+Included Experiments
+-------------------------------------
+
+After running "make" to create the "rtneat" executable, rtNEAT can be run 
+from the command line as follows:
+
+% ./rtneat paramfilename.ne
+
+"paramfilename.ne" must be included so that rtNEAT knows what evolution 
+parameters you want to use.  You can use one of the supplied parameter 
+files (they all end in the .ne extension), or create your own.
+
+The pole2_markov.ne parameter file was designed for markovian pole 
+balancing of any type (single pole, double pole, real-time).
+
+The p2nv.ne parameter file was designed for double pole balancing without 
+veolicity information.  However, pole2_markov.ne also works with this 
+experiment, and with XOR.
+
+When you run rtNEAT from the command line, you are given the option of 5 
+experiments:
+
+Please choose an experiment: 
+1 - 1-pole balancing
+2 - 2-pole balancing, velocity info provided
+3 - 2-pole balancing, no velocity info provided (non-markov)
+4 - 2-pole balancing, velocity info provided, tested using rtNEAT calls 
+and steady-state evolution
+5 - XOR
+Number:
+
+At the "Number:" prompt, you can enter your choice.  The correct starter 
+genome will be loaded in automatically and evolution will commence.  
+Most experiments output generational population files ("gen_#") at 
+regular intervals based on the "print_every" parameter in the supplied 
+.ne file. For example, if print_every is 5, then gen_5, gen_10, gen_15, 
+etc., will be written to the directory containing rtNEAT.
+
+Experiment 4 does not output files based on "print_every" because it is 
+real-time and therefore does not utilize generations.  Instead, it 
+outputs the population into the file "rt_winpop" when a solution is 
+found.
+
+-------------------------------------
+Testing rtNEAT with Pole Balancing
+-------------------------------------
+
+The aim of this source code release is to put rtNEAT into the hands of 
+researchers who wish to integrate it into real-time simulations and 
+games.  Experiment 4 is included as a validation experiment that shows 
+the basic calls to rtNEAT methods, and shows that rtNEAT can perform 
+similarly to regular NEAT.  In experiment 4, rtNEAT is used to evolve a 
+double pole balancing network that takes pole velocities as inputs.  
+Thus experiment 4 is the rtNEAT version of experiment 2, which runs with 
+regular generational NEAT.
+
+It is important to note that double pole balancing is not inherently 
+"real-time" and therefore does not require rtNEAT to run.  However, the 
+point is not that rtNEAT is required, but rather to show that rtNEAT is 
+in working order, and to show what the proper function calls are to 
+evolve with rtNEAT.  Once you understand how rtNEAT is working with this 
+experiment, you will be able to move on to integrating rtNEAT into a true 
+real-time simulation with multiple agents evolving simultaneously, 
+asynchronously, and interactively, as in NERO.
+
+Instead of generational output, experiment 4 outputs the current species 
+each time a new baby is born.  Recall that in rtNEAT, one offspring is 
+produced at a time, and one existing individual is chosen to be replaced 
+by that offspring.  Thus, output shows the population after each 
+individual reproduction:
+
+...
+Org 643 fitness: 5 (10 / 9)    [mate]
+Species 1 size35 average= 83.5429
+Species 2 size15 average= 75.8
+Species 3 size15 average= 51.0667
+Species 4 size14 average= 39.2857
+Species 5 size17 average= 45.0588
+Species 6 size16 average= 39.875
+Species 11 size2 average= 23.5
+Species 12 size2 average= 43.5
+Species 15 size3 average= 13.6667
+Species 16 size7 average= 52
+Species 17 size5 average= 22.4
+Species 18 size4 average= 31
+Species 19 size9 average= 68.7778
+Species 20 size6 average= 28.1667
+Pop size: 150
+Evaluating new baby: 
+Org 644 fitness: 39 (13 / 10)    [mate]
+compat_thresh = 3
+Species 1 size35 average= 83.5429
+Species 2 size15 average= 76.6
+Species 3 size15 average= 51.0667
+Species 4 size14 average= 39.2857
+Species 5 size17 average= 45.0588
+Species 6 size19 average= 38.3684
+Species 11 size2 average= 23.5
+Species 12 size2 average= 43.5
+Species 15 size3 average= 13.6667
+Species 16 size7 average= 52
+Species 17 size5 average= 22.4
+Species 18 size1 average= 33
+Species 19 size9 average= 68.7778
+Species 20 size6 average= 28.1667
+Pop size: 150
+Evaluating new baby: 
+...
+
+The organism # keeps going up until a solution is found.  "Org 644" is 
+the 644th organism to be born.  If we divide by 150, we would get the 
+number of generatons a population of 150 would have experienced to get to 
+the same number of evaluations.  In this case, 644 evaluations is like 
+4.29 generations of a population of 150.
+
+Next to each species in the list is its average fitness.  The goal is to 
+balance for 100,000 timesteps by a *single* individual.  That is, the 
+species average does not need to reach 100,000 because only one member of 
+the species must reach that level in order for the experiment to have 
+succeeded.
+
+-------------------------------------------------
+Integrating rtNEAT into a real Game or Simulation
+-------------------------------------------------
+
+To learn to how integrate rtNEAT into a game or simulation, first take a 
+look at the pole2_realtime_loop(..) function that is in experiments.cpp.  
+That function includes detailed comments on why every call is made and 
+how they work.  It includes the main evolution loop that is used in 
+experiment 4.
+
+Once you are familiar with that code, you will want to look at 
+nero_evolution.cpp.  That file contains the actual core evolution code 
+that was used in NERO, with heavy commenting.  While we cannot release 
+NERO source code in its entirety, we can release this core evolution code 
+because it does not involve Torque system calls.  The code is slightly 
+more advanced than the pole2_realtime_loop because it is actually part of 
+a true simulator with (usually) 50 agents running around and evolving 
+simultaneously.  Accordingly, the main rtNEAT evolution code in the NERO 
+file is in a function that is called periodically by a system tick rather 
+than in a for loop like in pole2_realtime_loop.  You will notice some 
+additional cleanup and debug code in the NERO code sample that may also 
+be helpful.
+
+After observing how rtNEAT was called in NERO, you will be in a position 
+to write (or even copy!) similar core evolution calls for a process tick 
+in your own simulation or game, and should be able to run your own 
+real-time evolution experiments.
+
+(Note: The reproduce_one(..) function in species.cpp, which is the main 
+rtNEAT reproduction routine, uses truncation selection within a species, 
+but can easily be switched to roulette wheel selection by commenting out 
+the truncation-selection code and uncommenting the roulette wheel code.  
+Both are provided.  NERO used the roulette wheel, although this 
+distribution defaults to truncation.)
+
+------------------------------------------------
+Conclusion
+------------------------------------------------
+
+We hope that this software will be a useful starting point for your own 
+explorations in real-time NEAT. The software is provided as is, however, 
+we will do our best to maintain it and accommodate suggestions. If you 
+want to be notified of future releases of the software or have questions, 
+comments, bug reports or suggestions, send email to kstanley@cs.ucf.edu.
+
+****************************************************************************
+This source code is for research and personal use only.  Commercial use 
+is prohibited; a patent has been filed for rtNEAT by the University of 
+Texas at Austin.  Please see the included research license.
+****************************************************************************
+
+Copyright (c) The University of Texas, 2006. All rights reserved. 
+UNIVERSITY EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES CONCERNING THIS 
+SOFTWARE AND DOCUMENTATION, INCLUDING ANY WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR ANY PARTICULAR PURPOSE, NON-INFRINGEMENT AND WARRANTIES OF 
+PERFORMANCE, AND ANY WARRANTY THAT MIGHT OTHERWISE ARISE FROM COURSE OF 
+DEALING OR USAGE OF TRADE. NO WARRANTY IS EITHER EXPRESS OR IMPLIED WITH 
+RESPECT TO THE USE OF THE SOFTWARE OR DOCUMENTATION. Under no 
+circumstances shall University be liable for incidental, special, 
+indirect, direct or consequential damages or loss of profits, 
+interruption of business, or related expenses which may arise from use of 
+Software or Documentation, including but not limited to those resulting 
+from defects in Software and/or Documentation, or loss or inaccuracy of 
+data of any kind.
