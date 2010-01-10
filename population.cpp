@@ -1,8 +1,11 @@
+// Modified by David Roberts 2010
+
 #include "population.h"
 #include "organism.h"
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <cstring>
 using namespace NEAT;
 
 extern int NEAT::time_alive_minimum;

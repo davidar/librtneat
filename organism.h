@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #ifndef _ORGANISM_H_
 #define _ORGANISM_H_
 
@@ -51,7 +53,7 @@ namespace NEAT {
 		bool write_to_file(std::ostream &outFile);
 
 		Organism(double fit, Genome *g, int gen, const char* md = 0);
-		Organism::Organism(const Organism& org);	// Copy Constructor
+		Organism(const Organism& org);	// Copy Constructor
 		~Organism();
 
 	};

@@ -1,4 +1,7 @@
+// Modified by David Roberts 2010
+
 #include "organism.h"
+#include <cstring>
 
 using namespace NEAT;
 

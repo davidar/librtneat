@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #ifndef _NETWORK_H_
 #define _NETWORK_H_
 
@@ -51,16 +53,16 @@ namespace NEAT {
 		Network(std::vector<NNode*> in,std::vector<NNode*> out,std::vector<NNode*> all,int netid);
 
 		//Same as previous constructor except the adaptibility can be set true or false with adaptval
-		Network::Network(std::vector<NNode*> in,std::vector<NNode*> out,std::vector<NNode*> all,int netid, bool adaptval);
+		Network(std::vector<NNode*> in,std::vector<NNode*> out,std::vector<NNode*> all,int netid, bool adaptval);
 
 		// This constructs a net with empty input and output lists
 		Network(int netid);
 
 		//Same as previous constructor except the adaptibility can be set true or false with adaptval
-		Network::Network(int netid, bool adaptval);
+		Network(int netid, bool adaptval);
 
 		// Copy Constructor
-		Network::Network(const Network& network);
+		Network(const Network& network);
 
 		~Network();
 

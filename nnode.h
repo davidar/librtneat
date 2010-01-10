@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #ifndef _NNODE_H_
 #define _NNODE_H_
 
@@ -26,6 +28,8 @@ namespace NEAT {
 	};
 
 	class Link;
+	class Network;
+	class Genome;
 
 	// ----------------------------------------------------------------------- 
 	// A NODE is either a NEURON or a SENSOR.  

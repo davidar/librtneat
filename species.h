@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #ifndef _SPECIES_H_
 #define _SPECIES_H_
 
@@ -40,7 +42,7 @@ namespace NEAT {
 		Organism *first();
 
 		bool print_to_file(std::ostream &outFile);
-		bool Species::print_to_file(std::ofstream &outFile);
+		bool print_to_file(std::ofstream &outFile);
 
 		//Change the fitness of all the organisms in the species to possibly depend slightly on the age of the species
 		//and then divide it by the size of the species so that the organisms in the species "share" the fitness
@@ -74,7 +76,7 @@ namespace NEAT {
 		// *** Real-time methods *** 
 
 		//Place organisms in this species in order by their fitness
-		bool Species::rank();
+		bool rank();
 
 		//Compute an estimate of the average fitness of the species
 		//The result is left in variable average_est and returned
@@ -89,8 +91,8 @@ namespace NEAT {
 		//    Sort the Species by max fitness (Use an extra list to do this)
 		//    These need to use ORIGINAL fitness
 		//      sorted_species.sort(order_species);
-		Organism *Species::reproduce_one(int generation, Population *pop,std::vector<Species*> &sorted_species);
-//		Organism *Species::reproduce_one(int generation, Population *pop,Vector<Species*> &sorted_species, bool addAdv, Genome* adv);
+		Organism *reproduce_one(int generation, Population *pop,std::vector<Species*> &sorted_species);
+//		Organism *reproduce_one(int generation, Population *pop,Vector<Species*> &sorted_species, bool addAdv, Genome* adv);
 
 		Species(int i);
 

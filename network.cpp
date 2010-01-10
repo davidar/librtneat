@@ -1,6 +1,9 @@
+// Modified by David Roberts 2010
+
 #include "network.h"
 #include <iostream>
 #include <sstream>
+#include <cstring>
 
 using namespace NEAT;
 

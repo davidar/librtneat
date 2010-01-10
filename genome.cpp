@@ -1,8 +1,11 @@
+// Modified by David Roberts 2010
+
 #include "genome.h"
 
 #include <iostream>
 #include <cmath>
 #include <sstream>
+#include <cstring>
 using namespace NEAT;
 
 Genome::Genome(int id, std::vector<Trait*> t, std::vector<NNode*> n, std::vector<Gene*> g) {

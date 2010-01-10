@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #ifndef _GENOME_H_
 #define _GENOME_H_
 
@@ -49,7 +51,7 @@ namespace NEAT {
 		Genome(int id, std::vector<Trait*> t, std::vector<NNode*> n, std::vector<Link*> links);
 
 		// Copy constructor
-		Genome::Genome(const Genome& genome);
+		Genome(const Genome& genome);
 
 		//Special constructor which spawns off an input file
 		//This constructor assumes that some routine has already read in GENOMESTART

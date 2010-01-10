@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #ifndef _POPULATION_H_
 #define _POPULATION_H_
 
@@ -59,7 +61,7 @@ namespace NEAT {
 
 		// Print Population to a file in speciated order with comments separating each species
 		bool print_to_file_by_species(std::ostream& outFile);
-		bool Population::print_to_file_by_species(char *filename);
+		bool print_to_file_by_species(char *filename);
 
 		// Prints the champions of each species to files starting with directory_prefix
 		// The file name are as follows: [prefix]g[generation_num]cs[species_num]
