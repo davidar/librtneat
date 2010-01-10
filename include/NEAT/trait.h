@@ -1,5 +1,7 @@
-#ifndef _TRAIT_H_
-#define _TRAIT_H_
+// Modified by David Roberts 2010
+
+#ifndef _NEAT_TRAIT_H_
+#define _NEAT_TRAIT_H_
 
 #include <fstream>
 #include "neat.h"

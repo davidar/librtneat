@@ -1,5 +1,7 @@
-#ifndef _GENE_H_
-#define _GENE_H_
+// Modified by David Roberts 2010
+
+#ifndef _NEAT_GENE_H_
+#define _NEAT_GENE_H_
 
 #include "neat.h"
 #include "trait.h"

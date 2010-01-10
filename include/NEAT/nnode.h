@@ -1,7 +1,7 @@
 // Modified by David Roberts 2010
 
-#ifndef _NNODE_H_
-#define _NNODE_H_
+#ifndef _NEAT_NNODE_H_
+#define _NEAT_NNODE_H_
 
 #include <algorithm>
 #include <vector>

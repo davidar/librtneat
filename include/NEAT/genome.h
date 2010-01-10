@@ -1,7 +1,7 @@
 // Modified by David Roberts 2010
 
-#ifndef _GENOME_H_
-#define _GENOME_H_
+#ifndef _NEAT_GENOME_H_
+#define _NEAT_GENOME_H_
 
 #include <vector>
 #include "gene.h"

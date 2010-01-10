@@ -1,5 +1,7 @@
-#ifndef _NERO_NEAT_H_
-#define _NERO_NEAT_H_
+// Modified by David Roberts 2010
+
+#ifndef _NEAT_NEAT_H_
+#define _NEAT_NEAT_H_
 
 #include <cstdlib>
 

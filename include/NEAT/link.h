@@ -1,5 +1,7 @@
-#ifndef _LINK_H_
-#define _LINK_H_
+// Modified by David Roberts 2010
+
+#ifndef _NEAT_LINK_H_
+#define _NEAT_LINK_H_
 
 #include "neat.h"
 #include "trait.h"

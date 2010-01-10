@@ -1,5 +1,7 @@
-#ifndef _INNOVATION_H_
-#define _INNOVATION_H_
+// Modified by David Roberts 2010
+
+#ifndef _NEAT_INNOVATION_H_
+#define _NEAT_INNOVATION_H_
 
 namespace NEAT {
 

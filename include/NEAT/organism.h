@@ -1,7 +1,7 @@
 // Modified by David Roberts 2010
 
-#ifndef _ORGANISM_H_
-#define _ORGANISM_H_
+#ifndef _NEAT_ORGANISM_H_
+#define _NEAT_ORGANISM_H_
 
 #include "genome.h"
 #include "species.h"

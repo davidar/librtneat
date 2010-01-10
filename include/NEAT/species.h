@@ -1,7 +1,7 @@
 // Modified by David Roberts 2010
 
-#ifndef _SPECIES_H_
-#define _SPECIES_H_
+#ifndef _NEAT_SPECIES_H_
+#define _NEAT_SPECIES_H_
 
 #include "neat.h"
 #include "organism.h"

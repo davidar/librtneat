@@ -1,7 +1,7 @@
 // Modified by David Roberts 2010
 
-#ifndef _POPULATION_H_
-#define _POPULATION_H_
+#ifndef _NEAT_POPULATION_H_
+#define _NEAT_POPULATION_H_
 
 #include <cmath>
 #include <vector>

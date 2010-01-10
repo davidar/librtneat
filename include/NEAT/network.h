@@ -1,7 +1,7 @@
 // Modified by David Roberts 2010
 
-#ifndef _NETWORK_H_
-#define _NETWORK_H_
+#ifndef _NEAT_NETWORK_H_
+#define _NEAT_NETWORK_H_
 
 #include <algorithm>
 #include <vector>
