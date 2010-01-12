@@ -1,3 +1,5 @@
+// Modified by David Roberts 2010
+
 #include "species.h"
 #include "organism.h"
 #include <cmath>
@@ -658,7 +660,7 @@ bool Species::print_to_file(std::ostream &outFile) {
 //starting with directory_prefix
 //The file name are as follows: [prefix]g[generation_num]cs[species_num]
 //Thus, they can be indexed by generation or species
-//bool Population::print_species_champs_tofiles(char *directory_prefix, int generation) {
+//bool Population::print_species_champs_tofiles(const char *directory_prefix, int generation) {
 //
 //ostrstream *fnamebuf; //File for output
 //std::vector<Species*>::iterator curspecies;

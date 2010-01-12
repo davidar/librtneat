@@ -61,12 +61,12 @@ namespace NEAT {
 
 		// Print Population to a file in speciated order with comments separating each species
 		bool print_to_file_by_species(std::ostream& outFile);
-		bool print_to_file_by_species(char *filename);
+		bool print_to_file_by_species(const char *filename);
 
 		// Prints the champions of each species to files starting with directory_prefix
 		// The file name are as follows: [prefix]g[generation_num]cs[species_num]
 		// Thus, they can be indexed by generation or species
-		bool print_species_champs_tofiles(char *directory_prefix,int generation);
+		bool print_species_champs_tofiles(const char *directory_prefix,int generation);
 
 		// Run verify on all Genomes in this Population (Debugging)
 		bool verify();

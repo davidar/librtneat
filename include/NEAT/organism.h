@@ -49,7 +49,7 @@ namespace NEAT {
 		void update_phenotype();
 
 		// Print the Organism's genome to a file preceded by a comment detailing the organism's species, number, and fitness 
-		bool print_to_file(char *filename);   
+		bool print_to_file(const char *filename);   
 		bool write_to_file(std::ostream &outFile);
 
 		Organism(double fit, Genome *g, int gen, const char* md = 0);

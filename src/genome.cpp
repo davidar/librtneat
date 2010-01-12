@@ -555,7 +555,7 @@ Genome::Genome(int num_in,int num_out,int num_hidden,int type) {
 
 }
 
-Genome* Genome::new_Genome_load(char *filename) {
+Genome* Genome::new_Genome_load(const char *filename) {
 	Genome *newgenome;
 
 	int id;
@@ -895,7 +895,7 @@ void Genome::print_to_file(std::ostream &outFile) {
 	//outFile.write(strlen(tempbuf4), tempbuf4);
 }
 
-void Genome::print_to_filename(char *filename) {
+void Genome::print_to_filename(const char *filename) {
 	std::ofstream oFile(filename);
 	//oFile.open(filename, std::ostream::Write);
 	print_to_file(oFile);

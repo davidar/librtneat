@@ -73,7 +73,7 @@ namespace NEAT {
 		Genome(int num_in,int num_out,int num_hidden,int type);
 
 		// Loads a new Genome from a file (doesn't require knowledge of Genome's id)
-		static Genome *new_Genome_load(char *filename);
+		static Genome *new_Genome_load(const char *filename);
 
 		//Destructor kills off all lists (including the trait vector)
 		~Genome();
@@ -86,7 +86,7 @@ namespace NEAT {
 		void print_to_file(std::ofstream &outFile);
 
 		// Wrapper for print_to_file above
-		void print_to_filename(char *filename);
+		void print_to_filename(const char *filename);
 
 		// Duplicate this Genome to create a new one with the specified id 
 		Genome *duplicate(int new_id);

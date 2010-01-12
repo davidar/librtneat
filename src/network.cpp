@@ -120,7 +120,7 @@ bool Network::outputsoff() {
 }
 
 // Print the connections weights to a file separated by only carriage returns
-void Network::print_links_tofile(char *filename) {
+void Network::print_links_tofile(const char *filename) {
 	std::vector<NNode*>::iterator curnode;
 	std::vector<Link*>::iterator curlink;
 
@@ -404,7 +404,7 @@ void Network::override_outputs(double* outvals) {
 
 }
 
-void Network::give_name(char *newname) {
+void Network::give_name(const char *newname) {
 	char *temp;
 	char *temp2;
 	temp=new char[strlen(newname)+1];

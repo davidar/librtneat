@@ -95,7 +95,7 @@ namespace NEAT {
 		void override_outputs(double*);
 
 		// Name the network
-		void give_name(char*);
+		void give_name(const char*);
 
 		// Counts the number of nodes in the net if not yet counted
 		int nodecount();
@@ -116,7 +116,7 @@ namespace NEAT {
 		bool outputsoff();
 
 		// Just print connections weights with carriage returns
-		void print_links_tofile(char *filename);
+		void print_links_tofile(const char *filename);
 
 		int max_depth();
 

@@ -83,7 +83,7 @@ void Organism::update_phenotype() {
 	modified = true;
 }
 
-bool Organism::print_to_file(char *filename) {
+bool Organism::print_to_file(const char *filename) {
 	
 	std::ofstream oFile(filename);
 
@@ -105,7 +105,7 @@ bool Organism::write_to_file(std::ostream &outFile) {
 
 //// Print the Organism's genome to a file preceded by a comment             
 ////   detailing the organism's species, number, and fitness
-//bool Organism::print_to_file(char *filename) {
+//bool Organism::print_to_file(const char *filename) {
 //
 //ofstream oFile(filename,ios::out);
 //
