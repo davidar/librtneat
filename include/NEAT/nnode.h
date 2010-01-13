@@ -14,7 +14,7 @@
  * loss or inaccuracy of data of any kind.
  */
 
-// Modified by David Roberts 2010
+// Modifications made by David Roberts <d@vidr.cc>, 2010.
 
 #ifndef _NEAT_NNODE_H_
 #define _NEAT_NNODE_H_
