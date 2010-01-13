@@ -148,7 +148,7 @@ double Species::estimate_average() {
 	double spin;  //Fitness total while the wheel is spinning
 
 
-	//printf("In reproduce_one");
+	//printf("In reproduce_one\n");
 
 	//Check for a mistake
 	if ((organisms.size()==0)) {

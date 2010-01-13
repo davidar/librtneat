@@ -71,7 +71,7 @@ Organism::Organism(const Organism& org)
 	super_champ_offspring = org.super_champ_offspring;
 
 	strcpy(metadata, org.metadata);
-	//printf("copying %s did it work? %s", org.metadata, metadata);
+	//printf("copying %s did it work? %s\n", org.metadata, metadata);
 
 	time_alive = org.time_alive;
 	pop_champ = org.pop_champ;

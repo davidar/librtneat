@@ -138,15 +138,14 @@ Genome::Genome(int id, std::ifstream &iFile) {
 		//strcpy(curword, NEAT::getUnit(curline, curwordnum++, delimiters));
         ss >> curword;
 
-		//printf(curword);
-		//printf(" test\n");
+		//printf("%s test\n", curword);
 		//Check for end of Genome
 		if (strcmp(curword,"genomeend")==0) {
 			//strcpy(curword, NEAT::getUnit(curline, curwordnum++, delimiters));
             ss >> curword;
 			int idcheck = atoi(curword);
 			//iFile>>idcheck;
-			if (idcheck!=genome_id) printf("ERROR: id mismatch in genome");
+			if (idcheck!=genome_id) printf("ERROR: id mismatch in genome\n");
 			done=1;
 		}
 
@@ -1195,7 +1194,7 @@ void Genome::mutate_link_weights(double power,double rate,mutator mut_type) {
 	//KENHACK: NOTE THIS HAS BEEN MAJORLY ALTERED
 	//     THE LOOP BELOW IS THE ORIGINAL METHOD
 	if (mut_type==COLDGAUSSIAN) {
-		//printf("COLDGAUSSIAN");
+		//printf("COLDGAUSSIAN\n");
 		for(curgene=genes.begin();curgene!=genes.end();curgene++) {
 			if (randfloat()<0.9) {
 				randnum=randposneg()*randfloat()*power*powermod;
@@ -1971,10 +1970,10 @@ void Genome::add_gene(std::vector<Gene*> &glist,Gene *g) {
   while ((curgene!=glist.end())&&
 	 (((*curgene)->innovation_num)<inum)) {
     //p1innov=(*curgene)->innovation_num;
-    //printf("Innov num: %f",p1innov);  
+    //printf("Innov num: %f\n",p1innov);  
     ++curgene;
 
-    //Con::printf("looking gene %f", (*curgene)->innovation_num);
+    //Con::printf("looking gene %f\n", (*curgene)->innovation_num);
   }
 
 

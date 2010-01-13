@@ -119,7 +119,7 @@ Population::Population(const char *filename) {
 
 	std::ifstream iFile(filename);
 	if (!iFile) {
-		printf("Can't open genomes file for input");
+		printf("Can't open genomes file for input\n");
 		return;
 	}
 
@@ -1018,7 +1018,7 @@ Species *Population::choose_parent_species() {
 	//Finished roulette
 
 	//  cout<<"Chose random species "<<(*curspecies)->id<<endl;
-	//printf("Chose random species %d.",(*curspecies)->id);
+	//printf("Chose random species %d.\n",(*curspecies)->id);
 
 	//Return the chosen species
 	return (*curspecies);
@@ -1068,7 +1068,7 @@ Organism* Population::remove_worst() {
 
 	if (org_to_kill) {
 
-//		printf("Org to kill: species = %d",org_to_kill->species->id);
+//		printf("Org to kill: species = %d\n",org_to_kill->species->id);
 
 		//Remove the organism from its species and the population
 		orgs_species->remove_org(org_to_kill);  //Remove from species
@@ -1143,7 +1143,7 @@ Organism* Population::remove_worst_probabilistic() {
 	//	}
 	//}
 
-	//printf("Org to kill time_alive = %d and fitness = %f",org_to_kill->time_alive,org_to_kill->fitness);
+	//printf("Org to kill time_alive = %d and fitness = %f\n",org_to_kill->time_alive,org_to_kill->fitness);
 
 	if (org_to_kill) {
 		//Remove the organism from its species and the population
@@ -1259,9 +1259,9 @@ Organism* Population::reproduce_champ(int generation) {
 	(organisms).push_back(baby);
 
 
-	//printf("CHAMPBABY --- species: %i   fitness: %f   ", champ->species->id, champ->fitness );
+	//printf("CHAMPBABY --- species: %i   fitness: %f   \n", champ->species->id, champ->fitness );
 
-	//printf("----------------------------");
+	//printf("----------------------------\n");
 
 	return baby; //Return a pointer to the baby
 
@@ -1430,7 +1430,7 @@ void Population::switch_species(Organism *org, Species *orig_species, Species *n
 //	}
 //	deadorg = curorg;
 //
-//	//Con::printf("Org to kill time_alive = %d and fitness = %f",org_to_kill->time_alive,org_to_kill->fitness);
+//	//Con::printf("Org to kill time_alive = %d and fitness = %f\n",org_to_kill->time_alive,org_to_kill->fitness);
 //
 //	if (org_to_kill) {
 //		//Remove the organism from its species and the population
