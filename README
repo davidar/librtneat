@@ -1,3 +1,11 @@
+This is a cleaned-up distribution of the rtNEAT package[1] written by Kenneth
+Stanley. Extraneous files have been removed, several bugs fixed, and the source
+code has been reorganised to allow thirdparty applications to link against
+rtNEAT more easily.
+
+[1] http://nn.cs.utexas.edu/?rtneat
+
+
 Copyright (C) The University of Texas, 2006. All rights reserved.
 UNIVERSITY EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES CONCERNING THIS
 SOFTWARE AND DOCUMENTATION, INCLUDING ANY WARRANTIES OF
@@ -12,4 +20,4 @@ arise from use of Software or Documentation, including but not limited
 to those resulting from defects in Software and/or Documentation, or
 loss or inaccuracy of data of any kind.
 
-Modifications made by David Roberts, 2010.
+Modifications made by David Roberts <d@vidr.cc>, 2010.
